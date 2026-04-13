@@ -11,13 +11,12 @@ crate-type = ["cdylib", "rlib"]
 [dependencies]
 # El puente entre Rust y JavaScript
 wasm-bindgen = "0.2"
+serde = { version = "1", features = ["derive"] }
+pdf-writer = "0.9"
+serde_json = { version = "1", default-features = false, features = ["alloc"] }
 
 # Gestión de errores y logs (útil para debugging en el navegador)
 console_error_panic_hook = "0.1.7"
-
-# Para serializar datos entre JS y Rust de forma eficiente
-serde = { version = "1.0", features = ["derive"] }
-serde-wasm-bindgen = "0.4"
 
 [profile.release]
 # Optimización extrema para que el archivo .wasm pese lo mínimo
